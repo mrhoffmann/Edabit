@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edabit", "Edabit\Edabit.csproj", "{90F4E4DF-0554-4D5F-BFAA-C73D0E8121D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdabitTests2", "EdabitTests2\EdabitTests2.csproj", "{1E81BC09-6544-48C5-BAAE-64FF39C61239}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90F4E4DF-0554-4D5F-BFAA-C73D0E8121D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F4E4DF-0554-4D5F-BFAA-C73D0E8121D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F4E4DF-0554-4D5F-BFAA-C73D0E8121D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F4E4DF-0554-4D5F-BFAA-C73D0E8121D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E81BC09-6544-48C5-BAAE-64FF39C61239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E81BC09-6544-48C5-BAAE-64FF39C61239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E81BC09-6544-48C5-BAAE-64FF39C61239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E81BC09-6544-48C5-BAAE-64FF39C61239}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58C5881D-3BE1-4E47-A449-5BF8489A80AF}
+	EndGlobalSection
+EndGlobal
