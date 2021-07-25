@@ -259,15 +259,6 @@ namespace Edabit.Helpers.Tests
         }
 
         [Test()]
-        [TestCase("557 Farmer Rd Corner, MT 59105", new string[]{"557", "Farmer Rd", "Corner", "MT", "59105"})]
-        [TestCase("3315 Vanity St Beverly Hills, CA 90210", new string[] { "3315", "Vanity St", "Beverly Hills", "CA", "90210" })]
-        [TestCase("8919 Scarecrow Ct Idaho Falls, ID 80193", new string[] { "8919", "Scarecrow Ct", "Idaho Falls", "ID", "80193" })]
-        public void DecomposeAddressTest(string p0, string[] p1)
-        {
-            Assert.That(Challenge.DecomposeAddress(p0), Is.EqualTo(p1));
-        }
-
-        [Test()]
         [TestCase("ABCD", "ABCD")]
         [TestCase("AB[3CD]", "ABCDCDCD")]
         [TestCase("AB[1C]", "ABC")]

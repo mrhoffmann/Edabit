@@ -269,30 +269,6 @@ namespace Edabit.Helpers
         }
 
         /// <summary>
-        /// Decompose Address
-        /// <para>Link: https://edabit.com/challenge/ah9SjMJzFmNLD54W9</para>
-        /// <para>Task: Create a function that decomposes an address string into an array of five substrings:
-        /// <list type="bullet">
-        ///     <item>Street Number</item>
-        ///     <item>Street Name</item>
-        ///     <item>City Name</item>
-        ///     <item>State</item>
-        ///     <item>Zip Code</item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        /// <param name="p0"></param>
-        /// <returns></returns>
-        public static string[] DecomposeAddress(string p0)
-        {
-            var address = p0.Split(",");
-            var first = address[0].Split(" ");
-            var last = address[1].Split(" ");
-            Debug.WriteLine(first[0] + " " + $"\"{first[1]} {first[2]}\"" + " " + ", " + last[0] + " " + last[1]);
-            return new string[] { first[0], $"{first[1]} {first[2]}", last[0], last[1] };
-        }
-
-        /// <summary>
         /// Message from Space
         /// <para>Link: https://edabit.com/challenge/58iEEYqxFdnkBjEiA</para>
         /// <para>Task: You have received an encrypted message from space.</para>
