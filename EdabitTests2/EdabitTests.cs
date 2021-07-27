@@ -38,16 +38,13 @@ namespace Edabit.Helpers.Tests
         public bool VerifyIPV4Test(string p0) => Challenge.IsValidIP(p0);
 
         [Test()]
-        public void LetterCounterTest()
-        {
-            var items = new string[5][] {
+        [TestCase(ExpectedResult = 3)]
+        public int LetterCounterTest() => Challenge.LetterCounter(new string[5][] {
                 new string[]{ "D", "E", "Y", "H", "A", "D" },
                 new string[]{ "C", "B", "Z", "Y", "J", "K" },
                 new string[]{ "D", "B", "C", "A", "M", "N" },
                 new string[]{ "F", "G", "G", "R", "S", "R" },
-                new string[]{ "V", "X", "H", "A", "S", "S" } };
-            Assert.That(Challenge.LetterCounter(items, "D"), Is.EqualTo(3));
-        }
+                new string[]{ "V", "X", "H", "A", "S", "S" } }, "D");
 
         [Test()]
         [TestCase(new int[] { 2, -1, 4, 8, 10 }, ExpectedResult = 25)]
@@ -64,13 +61,13 @@ namespace Edabit.Helpers.Tests
         [Test()]
         public void SquarePatchMultiDimensionalArrayWithFivesTest()
         {
-            Assert.That(Challenge.SquarePatch(5), Is.EqualTo(
+            Assert.AreEqual(Challenge.SquarePatch(5),
                 new int[][] {
                 new int[] { 5, 5, 5, 5, 5 },
                 new int[] { 5, 5, 5, 5, 5 },
                 new int[] { 5, 5, 5, 5, 5 },
                 new int[] { 5, 5, 5, 5, 5 },
-                new int[] { 5, 5, 5, 5, 5 } }));
+                new int[] { 5, 5, 5, 5, 5 } });
         }
 
         [Test()]
@@ -108,21 +105,21 @@ namespace Edabit.Helpers.Tests
         [Test()]
         public void TicTacToeTest()
         {
-            Assert.That(Challenge.TicTacToe(
+            Assert.AreEqual(Challenge.TicTacToe(
                 new char[][] {
                     new char[] { 'x', 'x', 'o' },
                     new char[] { 'o', 'x', 'x' },
                     new char[] { 'o', 'o', 'o' }
                 }
-            ), Is.EqualTo("Player 1 won"));
+            ), "Player 1 won");
 
-            Assert.That(Challenge.TicTacToe(
+            Assert.AreEqual(Challenge.TicTacToe(
                 new char[][] {
                     new char[] { 'x', 'x', 'x' },
                     new char[] { 'o', 'o', 'x' },
                     new char[] { 'o', 'x', 'o' }
                 }
-            ), Is.EqualTo("Player 2 won"));
+            ), "Player 2 won");
         }
 
         [Test()]
@@ -303,17 +300,11 @@ namespace Edabit.Helpers.Tests
         [Test()]
         public void ParseArrayTest()
         {
-            object[] testArr_1 = new object[] { 1, 2, "a", "b" };
-            object[] testArr_2 = new object[] { "a", "b", 10, 115 };
-            object[] testArr_3 = new object[] { };
-            object[] testArr_4 = new object[] { -4, "k", 0 };
-            object[] testArr_5 = new object[] { "Hell000!", 5 };
-
-            Assert.AreEqual(new string[] { "1", "2", "a", "b" }, Challenge.ParseArray(testArr_1));
-            Assert.AreEqual(new string[] { "a", "b", "10", "115" }, Challenge.ParseArray(testArr_2));
-            Assert.AreEqual(new string[] { }, Challenge.ParseArray(testArr_3));
-            Assert.AreEqual(new string[] { "-4", "k", "0" }, Challenge.ParseArray(testArr_4));
-            Assert.AreEqual(new string[] { "Hell000!", "5" }, Challenge.ParseArray(testArr_5));
+            Assert.AreEqual(new string[] { "1", "2", "a", "b" }, Challenge.ParseArray(new object[] { 1, 2, "a", "b" }));
+            Assert.AreEqual(new string[] { "a", "b", "10", "115" }, Challenge.ParseArray(new object[] { "a", "b", 10, 115 }));
+            Assert.AreEqual(new string[] { }, Challenge.ParseArray(new object[] { }));
+            Assert.AreEqual(new string[] { "-4", "k", "0" }, Challenge.ParseArray(new object[] { -4, "k", 0 }));
+            Assert.AreEqual(new string[] { "Hell000!", "5" }, Challenge.ParseArray(new object[] { "Hell000!", 5 }));
         }
 
         [Test()]
