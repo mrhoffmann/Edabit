@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 // https://edabit.com/user/52MDMbhQDpyDjfCjL
@@ -421,5 +422,22 @@ namespace Edabit.Helpers
         /// <para>Task: Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".</para>
         /// </summary>
         public static string SevenBoom(int[] p0) => p0.Any(x => x.ToString().Contains("7")) ? "Boom!" : "there is no 7 in the array";
+
+
+        /// <summary>
+        /// Consecutive numbers
+        /// <para>https://edabit.com/challenge/TAZywz6R2hu9tDQWc</para>
+        /// <para>Task: Create a function that determines whether elements in an array can be re-arranged to form a consecutive list of numbers where each number appears exactly once.</para>
+        /// </summary>
+        /// <returns></returns>
+        public static bool ConsecutiveNumbers(int[] arr)
+        {
+            Array.Sort(arr);
+            for(int i = 0; i < arr.Length - 1; i++)
+                if(arr[i]+1 != arr[i + 1])
+                    return false;
+
+            return true;
+        }
     }
 }
